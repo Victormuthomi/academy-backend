@@ -10,9 +10,11 @@ async function bootstrap() {
   // Enable DTO validation
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
-  // Enable CORS ONLY for localhost:5173
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://academy-frontend-nu-lime.vercel.app',
+    ],
     credentials: true, // if you plan to send cookies/auth
   });
 
