@@ -27,10 +27,15 @@ export class AuthService {
   }
 
   /**
-   * Login user and return JWT
+   * Login user and return JWT + role
    */
   async login(user: User) {
     const payload = { sub: user._id, role: user.role };
-    return { accessToken: this.jwtService.sign(payload) };
+    const accessToken = this.jwtService.sign(payload);
+
+    return {
+      accessToken,
+      role: user.role, // returning the role separately
+    };
   }
 }

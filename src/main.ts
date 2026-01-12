@@ -10,6 +10,12 @@ async function bootstrap() {
   // Enable DTO validation
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
+  // Enable CORS ONLY for localhost:5173
+  app.enableCors({
+    origin: 'http://localhost:5173',
+    credentials: true, // if you plan to send cookies/auth
+  });
+
   const port = process.env.PORT || 3000;
   const mongoUri = process.env.MONGO_URI;
 
