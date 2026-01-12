@@ -11,7 +11,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   app.enableCors({
-    origin: ['http://localhost:5173', 'https://alcodist-academy.vercel.app/'],
+    origin: ['http://localhost:5173', 'https://alcodist-academy.vercel.app'],
     credentials: true, // if you plan to send cookies/auth
   });
 
