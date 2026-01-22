@@ -33,9 +33,9 @@ export class User extends Document {
   @Prop()
   institution?: string;
 
-  @Prop()
-  admNo?: string;
-
+  @Prop({ default: '' })
+  admNo: string;
+ 
   @Prop({ default: false })
   isActive: boolean; // Trainer activates account
 

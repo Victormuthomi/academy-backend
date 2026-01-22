@@ -86,7 +86,12 @@ export class TraineeController {
   async updateProfile(
     @Req() req: any,
     @Body()
-    body: { skills?: string[]; projects?: string[]; institution?: string },
+    body: {
+      skills?: string[];
+      projects?: string[];
+      institution?: string;
+      admNo?: string;
+    },
   ) {
     const updated = await this.usersService.updateProfile(
       req.user.userId,

@@ -26,8 +26,8 @@ export class Trainee {
   @Prop()
   institution?: string;
 
-  @Prop()
-  admNo?: string;
+  @Prop({ default: '' })
+  admNo: string;
 
   @Prop({ type: [String], default: [] })
   skills: string[];

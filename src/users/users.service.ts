@@ -76,10 +76,11 @@ export class UsersService {
     if (!user) throw new NotFoundException('User not found');
 
     // Only allow updating specific fields
-    if (body.skills) user.skills = body.skills;
-    if (body.projects) user.projects = body.projects;
-    if (body.institution) user.institution = body.institution;
-    if (body.phone) user.phone = body.phone;
+    if (body.admNo !== undefined) user.admNo = body.admNo;
+    if (body.skills !== undefined) user.skills = body.skills;
+    if (body.projects !== undefined) user.projects = body.projects;
+    if (body.institution !== undefined) user.institution = body.institution;
+    if (body.phone !== undefined) user.phone = body.phone;
 
     return user.save();
   }
